@@ -5,7 +5,10 @@
                   containerClasses="px-4 container"
                   expand>
             <router-link slot="brand" class="navbar-brand" to="/">
-                <img src="img/brand/green.png"/>
+                <img src="img/brand/green.png" style="
+                                    width: 120px;
+                                    height: 90px;
+                                    " />
             </router-link>
 
             <template v-slot="{closeMenu}">
@@ -14,7 +17,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <router-link to="/">
-                                <img src="img/brand/green.png">
+                                <img src="img/brand/green.png" />
                             </router-link>
                         </div>
                         <div class="col-6 collapse-close">
@@ -52,7 +55,7 @@
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
                         <div class="col-lg-5 col-md-6">
-                            <h1 class="text-white">Bienvenue!</h1>
+                            <h1 class="text-white">Bienvenu dans CriSa !</h1>
                             
                         </div>
                     </div>

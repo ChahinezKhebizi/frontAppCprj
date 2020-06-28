@@ -5,20 +5,21 @@
                    
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>Or sign in with credentials</small>
+                            <strong>Se connecter </strong>
                         </div>
                         <form role="form">
-                            <input class="input-group-alternative mb-3"
+                            <base-input class="input-group-alternative mb-3"
                                         placeholder="Nom d'utilisateur"
-                                        addon-left-icon="ni ni-email-83"
+                                        addon-left-icon="ni ni-circle-08"
                                         v-model="user.email">
+                          </base-input>
 
-
-                            <input class="input-group-alternative"
+                            <base-input class="input-group-alternative"
                                         placeholder="Mot de passe"
                                         type="password"
                                         addon-left-icon="ni ni-lock-circle-open"
                                         v-model="user.password">
+                           </base-input>           
 
 
                             <base-checkbox class="custom-control-alternative">
