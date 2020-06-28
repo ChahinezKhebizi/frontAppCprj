@@ -35,13 +35,13 @@
                 <ul class="navbar-nav ml-auto">
                 
                     <li class="nav-item">
-                        <router-link class="nav-link nav-link-icon" to="#">
+                        <router-link class="nav-link nav-link-icon" >
                             <i class="ni ni-key-25"></i>
                             <span class="nav-link-inner--text">Aide?</span>
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link nav-link-icon" to="#">
+                        <router-link class="nav-link nav-link-icon">
                             <i class="ni ni-single-02"></i>
                             <span class="nav-link-inner--text">A propos</span>
                         </router-link>

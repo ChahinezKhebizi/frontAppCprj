@@ -8,38 +8,41 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     {
-      path: '/',
-      redirect: 'login',
+      path: '/accueil',
+      redirect: 'accueil',
       component: DashboardLayout,
       children: [
-        {
-          path: '/dashboard',
-          name: 'dashboard',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Dashboard.vue')
+
+        
+         {
+          path: '/accueil',
+          name: 'accueil',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Accueil.vue')
         },
         {
-          path: '/icons',
-          name: 'icons',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
+          path: '/inserercas',
+          name: 'inserer un cas suspect',
+        
+          component: () => import(/* webpackChunkName: "demo" */ './views/InsererCas.vue')
+        },
+       
+        {
+          path: '/changeretat',
+          name: 'changer état d un cas',
+          component: () => import(/* webpackChunkName: "demo" */ './views/ChangerEtat.vue')
         },
         {
-          path: '/profile',
-          name: 'profile',
-          component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
+          path: '/envoienotif',
+          name: 'déclarer une urgence !',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Notifier.vue')
         },
-        {
-          path: '/maps',
-          name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
+         {
+          path: '/affichercas',
+          name: 'afficher la liste des cas',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Afficher.vue')
         },
-        {
-          path: '/tables',
-          name: 'tables',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Tables.vue')
-        }
+        
+         
       ]
     },
     {
@@ -48,15 +51,11 @@ export default new Router({
       component: AuthLayout,
       children: [
         {
-          path: '/login',
+          path: '/',
           name: 'login',
           component: () => import(/* webpackChunkName: "demo" */ './views/Login.vue')
         },
-        {
-          path: '/register',
-          name: 'register',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Register.vue')
-        }
+        
       ]
     }
   ]
