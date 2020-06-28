@@ -76,35 +76,36 @@
                             <strong>Veuillez entrer les informations du cas suspect </strong>
                         </div>
                         <form role="form">
+
+                            <base-input class="input-group-alternative"
+                                        placeholder="Numéro de carte d'identité">
+                           </base-input>  
+
                             <base-input class="input-group-alternative mb-3"
-                                        placeholder="Nom"
-                                        
-                                      >
-                          </base-input>
+                                        placeholder="Nom" >
+                            </base-input>
 
                             <base-input class="input-group-alternative"
                                         placeholder="Prénom">
-                           </base-input>      
+                           </base-input>    
+
                             <base-input class="input-group-alternative"
                                         placeholder="Numéro du téléphone"> 
                            </base-input>  
 
                             <base-input class="input-group-alternative"
                                         placeholder="Date de naissance" type="Date"> 
-                           </base-input>  
+                           </base-input> 
+
                             <base-input class="input-group-alternative"
                                         placeholder="Lieu de naissance">
                            </base-input>  
-                            <base-input class="input-group-alternative"
-                                        placeholder="Adresse">
+
+                            <base-input class="input-group-alternative" placeholder="Adresse">
                            </base-input>           
          
-         
-
-
-
                             <div class="text-center">
-                                <base-button type="primary" size="lg" class="my-4" block>Enregister</base-button>
+             <base-button type="primary" size="lg" class="my-4" block>Enregister</base-button>
                             </div>
                         </form>
                     </div>
