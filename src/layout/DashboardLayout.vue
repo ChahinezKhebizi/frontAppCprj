@@ -15,6 +15,8 @@
          
          
          <sidebar-item :link="{name: 'Afficher la liste des cas', icon: 'ni ni-bullet-list-67 text-red', path: '/affichercas'}"/>
+         <sidebar-item :link="{name: 'Afficher un cas ', icon: 'ni ni-single-02 text-blue', path: '/afficherinfo'}"/>
+
          <sidebar-item :link="{name: 'Changer Etats', icon: ' ni ni-ui-04 text-yellow ', path: '/changeretat'}"/>
 
          <sidebar-item :link="{name: 'Déclarer une urgence', icon: 'ni ni-bell-55 text-orange', path: '/envoienotif'}"/>

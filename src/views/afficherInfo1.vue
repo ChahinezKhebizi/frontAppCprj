@@ -63,54 +63,45 @@
             </div>
         </base-header>
 
-       
 
-        <div class="row justify-content-center">
+       
+         
+             <!--form-->
+               <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                    
               <div class="card-body px-lg-5 py-lg-5">
-                <form>
-                    <p> <label>Veuillez introduire le rapport que vous voulez envoyer avec la notification :</label>  </p>
-                  <input  type="file"  @change="uploadFile" >
-                </form>
-                <base-button type="danger" size="lg" class="my-4"   @click="handleSubmit">Envoyer la notification !</base-button>
-                  </div></div></div></div>      
-                 
- </div>
-                             
+                        <div class="text-center text-muted mb-4">
+                            <strong>Veuillez entrer les informations du cas que vous voulez changer son état </strong>
+                        </div>
+                        <form role="form">
+
+                            <base-input label ="Numéro de carte d'identité" class="input-group-alternative"
+                                        placeholder="insérer le numéro">
+                           </base-input>  
+                            
+                         
+      
+         
+                            <div class="text-center">
+                                 <base-button tag="a" href="/#/afficherinformation"  type="primary" size="lg"  class="active" role="button" aria-pressed="true">Afficher les informations</base-button>
+            
+                            </div>
+                        </form>
+                    </div>
+               </div>
+           </div>
+     </div>
+           
 
 
+         
+      
 
+    </div>
 </template>
-
 <script>
-    /*import axios from 'axios'
 
-    export default {
-    name: 'Notifier',
-    data() {
-        return {
-                attachment: null,
-                form : new FormData
-            }
-    }  ,
-    methods:{
-        uploadFile (event) {
-            this.files = event.target.files
-        },
-        handleSubmit() {
-            const formData = new FormData();
-            for (const i of Object.keys(this.files)) {
-                formData.append('files', this.files[i])
-            }
-            axios.post('http://localhost:4000/sendEmail', formData, {
-            }).then((res) => {
-                console.log(res)
-            })
-        }}
-
-    } */
 </script>
-
 <style></style>

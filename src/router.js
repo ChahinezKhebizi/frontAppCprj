@@ -41,6 +41,16 @@ export default new Router({
           name: 'afficher la liste des cas',
           component: () => import(/* webpackChunkName: "demo" */ './views/Afficher.vue')
         },
+        {
+          path: '/afficherinfo',
+          name: 'afficher les informations d"un cas',
+          component: () => import(/* webpackChunkName: "demo" */ './views/afficherInfo1.vue')
+        },
+        {
+          path: '/afficherinformation',
+          name: 'afficher les informations d"un cas',
+          component: () => import(/* webpackChunkName: "demo" */ './views/AfficherInfo.vue')
+        },
         
          
       ]
