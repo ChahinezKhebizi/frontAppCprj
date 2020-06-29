@@ -34,6 +34,7 @@
                                                         label="Nom"
                                                         placeholder="nom"
                                                         input-classes="form-control-alternative"
+                                                        v-model="model.nom"
                                                         
                                             />
                                         </div>
@@ -42,7 +43,9 @@
                                                         label="Prénom"
                                                         placeholder="prénom"
                                                         input-classes="form-control-alternative"
-                                                      
+                                                        v-model="model.prenom"
+
+
                                             />
                                         </div>
                                     </div>
@@ -52,7 +55,8 @@
                                                         label="Numero de Téléphone"
                                                         
                                                         input-classes="form-control-alternative"
-                                                        
+                                                        v-model="model.numTlfn"
+
                                             />
                                         </div>
                                   
@@ -61,7 +65,9 @@
                                                         label="Numéro de la pièce d'identité"
                                                         placeholder="insérer le numéro ici"
                                                         input-classes="form-control-alternative"
-                                                       
+                                                        v-model="model.carteNational"
+
+
                                             />
                                         </div>
                                       
@@ -76,7 +82,9 @@
                                                         label="Date de naissance"
                                                         type="Date"
                                                         input-classes="form-control-alternative"
-                                                       
+                                                        v-model="model.dateNaissance"
+
+
                                             />
                                         </div>
                                           <div class="col-lg-6">
@@ -84,7 +92,9 @@
                                                         label="Lieux de naissance"
                                                         placeholder="Lieux"
                                                         input-classes="form-control-alternative"
-                                                        
+                                                        v-model="model.lieuNaissance"
+
+
                                             />
                                         </div>
                                     </div>
@@ -94,7 +104,9 @@
                                                         label="Wilaya actuelle"
                                                         
                                                         input-classes="form-control-alternative"
-                                                        
+                                                        v-model="model.wilaya"
+
+
                                             />
                                         </div>
                                         <div class="col-lg-6">
@@ -102,7 +114,9 @@
                                                         label="Commune actuelle"
                                                         
                                                         input-classes="form-control-alternative"
-                                                        
+                                                        v-model="model.commune"
+
+
                                             />
                                         </div>
                                         
@@ -111,13 +125,15 @@
                                                         label="Adresse exacte"
                                                         placeholder="adresse"
                                                         input-classes="form-control-alternative"
-                                                        
+                                                        v-model="model.address"
+
+
                                             />
                                         </div>
                                           </div>
                                 </div>
                                  <div class="text-center">
-                                <base-button type="success" class="my-4" block>Enregistrer</base-button>
+                                <base-button type="success" class="my-4" block @click="crerCas">Enregistrer</base-button>
                             </div>
                             </form>
                         </template>
@@ -129,6 +145,51 @@
     </div>
 </template>
 <script>
+    import axios from 'axios'
+    export default {
+    name: 'inserercas',
+        data() {
+        return {
+           model: {
+               nom : '',
+               prenom : '',
+               numTlfn:'',
+               dateNaissance :'',
+               lieuNaissance : '',
+               adresse :'',
+               carteNational:'',
+               commune:'',
+               wilaya:''
+            }
+        }
+    }  ,
+    methods:{
+        crerCas(){
+            const option = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('http://localhost:4000/createCasSuspect',
+                {
+                    nom : this.nom,
+                    prenom : this.prenom,
+                    numTlfn:this.prenom,
+                    dateNaissance :this.dateNaissance,
+                    lieuNaissance : this.lieuNaissance,
+                    adresse :this.adresse,
+                    carteNational:this.carteNational,
+                    commune:this.commune,
+                    wilaya:this.wilaya
+                }, option).then(function (response) {
+                //handle success
+                // eslint-disable-next-line no-console
+                console.log(response);
+            })
+
+
+
+        }}}
   
 </script>
 <style></style>

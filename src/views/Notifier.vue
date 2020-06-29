@@ -71,9 +71,9 @@
                    
               <div class="card-body px-lg-5 py-lg-5">
                 <form>
-                  <input type="file">
+                  <input type="file"  @change="uploadFile" >
                 </form>
-                <base-button type="danger" size="lg" class="my-4" block>Envoyer la notification !</base-button>
+                <base-button type="danger" size="lg" class="my-4" block  @click="handleSubmit">Envoyer la notification !</base-button>
                   </div></div></div></div>      
                  
  </div>
@@ -83,5 +83,33 @@
 
 </template>
 
+<script>
+    import axios from 'axios'
+
+    export default {
+    name: 'Notifier',
+    data() {
+        return {
+                attachment: null,
+                form : new FormData
+            }
+    }  ,
+    methods:{
+        uploadFile (event) {
+            this.files = event.target.files
+        },
+        handleSubmit() {
+            const formData = new FormData();
+            for (const i of Object.keys(this.files)) {
+                formData.append('files', this.files[i])
+            }
+            axios.post('http://localhost:4000/sendEmail', formData, {
+            }).then((res) => {
+                console.log(res)
+            })
+        }}
+
+    }
+</script>
 
 <style></style>
