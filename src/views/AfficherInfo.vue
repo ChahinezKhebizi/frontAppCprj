@@ -15,10 +15,11 @@
 
 
 
-        <div class="container-fluid mt--6" >
+        <div class="container-fluid mt--8" >
+            <div  class="row justify-content-center" >
             <div class="row">
 
-                <div class="col-xl-8 order-xl-1">
+                <div class="col-xl-12 order-xl-1">
                     <card shadow type="secondary">
                         <div slot="header" class="bg-white border-0">
                             <div class="row align-items-center">
@@ -39,6 +40,7 @@
                                                         input-classes="form-control-alternative" disabled
                                                         
                                          >
+
                                         </base-input>
                                         </div>
                                    </div>
@@ -193,6 +195,7 @@
                             </form>
                         </template>
                     </card>
+                    </div>
                 </div>
             </div>
           

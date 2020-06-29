@@ -28,24 +28,21 @@
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Bienvenu!</h6>
                         </div>
-                        <router-link to="/profile" class="dropdown-item">
-                            <i class="ni ni-single-02"></i>
-                            <span>Mon profile</span>
-                        </router-link>
-                        <router-link to="/profile" class="dropdown-item">
+                      
+                        <router-link to="/rien" class="dropdown-item">
                             <i class="ni ni-settings-gear-65"></i>
                             <span>Parametres</span>
                         </router-link>
-                        <router-link to="/profile" class="dropdown-item">
+                        <router-link  to="/rien" class="dropdown-item">
                             <i class="ni ni-calendar-grid-58"></i>
                             <span>Activités</span>
                         </router-link>
-                        <router-link to="/profile" class="dropdown-item">
+                        <router-link to="/rien"  class="dropdown-item">
                             <i class="ni ni-support-16"></i>
                             <span>Support</span>
                         </router-link>
                         <div class="dropdown-divider"></div>
-                        <router-link to="/profile" class="dropdown-item">
+                        <router-link to="/" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
                             <span>Se déconnecter</span>
                         </router-link>
