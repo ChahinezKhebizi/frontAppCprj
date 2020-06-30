@@ -30,12 +30,12 @@
                         </div>
 
                       
-                        <router-link to="/rien" class="dropdown-item">
+                        <router-link to="/#/accueil" class="dropdown-item">
                             <i class="ni ni-settings-gear-65"></i>
-                            <span>Parametres</span>
+                            <span>Paramètres</span>
                         </router-link>
 
-                        <router-link  to="/rien" class="dropdown-item">
+                        <router-link  to="/#/accueil" class="dropdown-item">
                             <i class="ni ni-calendar-grid-58"></i>
                             <span>Activités</span>
                         </router-link>
@@ -43,7 +43,7 @@
 
                         
                        
-                        <router-link to="/rien" class="dropdown-item">
+                        <router-link to="/#/accueil" class="dropdown-item">
 
                             <i class="ni ni-support-16"></i>
                             <span>Support</span>

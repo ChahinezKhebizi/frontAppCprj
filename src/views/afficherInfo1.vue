@@ -1,6 +1,9 @@
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
+        
+          <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                     <span class="mask bg-gradient-success opacity-8"></span>
             <!-- Card stats -->
             <div class="row">
 
@@ -189,7 +192,7 @@
                                 </div>
                                  <div class="text-center">
                           
-                                <base-button  @click="demoVisibility()" tag="a" type="secondary" size="lg"  class="active" role="button" aria-pressed="true"  >Changer l'état de ce cas</base-button>
+                                <base-button  @click="demoVisibility()"  type="danger" size="lg" >Changer l'état de ce cas</base-button>
                              </div>
 
 
@@ -228,7 +231,7 @@
                            
                             </base-dropdown>      </div>
                             <div class="col-lg-6">
-                                 <base-button  id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
+                                 <base-button   outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
                   </div> </div> </div> </div> </card> </div>
 
                        </div>

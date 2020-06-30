@@ -46,11 +46,7 @@ export default new Router({
           name: 'afficher les informations d"un cas',
           component: () => import(/* webpackChunkName: "demo" */ './views/afficherInfo1.vue')
         },
-        {
-          path: '/afficherinformation',
-          name: 'afficher les informations d"un cas',
-          component: () => import(/* webpackChunkName: "demo" */ './views/AfficherInfo.vue')
-        },
+       
         
          
       ]
