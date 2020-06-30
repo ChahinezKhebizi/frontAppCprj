@@ -28,7 +28,7 @@
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Bienvenu!</h6>
                         </div>
-<<<<<<< HEAD
+
                       
                         <router-link to="/rien" class="dropdown-item">
                             <i class="ni ni-settings-gear-65"></i>
@@ -39,7 +39,7 @@
                             <span>Activités</span>
                         </router-link>
                         <router-link to="/rien"  class="dropdown-item">
-=======
+
                         <router-link to="/profile" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
                             <span>Mon profile</span>
@@ -53,16 +53,15 @@
                             <span>Activités</span>
                         </router-link>
                         <router-link to="/profile" class="dropdown-item">
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
                             <i class="ni ni-support-16"></i>
                             <span>Support</span>
                         </router-link>
                         <div class="dropdown-divider"></div>
-<<<<<<< HEAD
-                        <router-link to="/" class="dropdown-item">
-=======
+           <router-link to="/" class="dropdown-item">
+
                         <router-link to="/profile" class="dropdown-item">
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
                             <i class="ni ni-user-run"></i>
                             <span>Se déconnecter</span>
                         </router-link>

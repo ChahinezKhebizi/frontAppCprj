@@ -3,7 +3,7 @@
         <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
             <!-- Card stats -->
             <div class="row">
-<<<<<<< HEAD
+
 
 
 
@@ -20,7 +20,7 @@
                                         placeholder="insérer le numéro">
                            </base-input>  
                             
-=======
+
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Total traffic"
                                 type="gradient-red"
@@ -100,22 +100,22 @@
                                         v-model="user. carteNational">
                            </base-input>
 
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
                          
       
          
                             <div class="text-center">
-<<<<<<< HEAD
+
                                  <base-button   type="success" size="lg" @click="demoDisplay()"  >Afficher les informations</base-button>
-=======
+
                                  <base-button tag="a" href="/#/afficherinformation"  type="primary" size="lg"  class="active" role="button" aria-pressed="true" @click="chercher_numcarte">Afficher les informations</base-button>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
             
                             </div>
                         </form>
                     </div>
                </div>
-<<<<<<< HEAD
+
                 </div>
            </div>
      </div>
@@ -325,10 +325,10 @@
                                 
           
        
-=======
+
            </div>
      </div>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
            
 
 
@@ -338,24 +338,10 @@
     </div>
 </template>
 <script>
-<<<<<<< HEAD
-export default{
-    methods:{
-        demoDisplay() {
-  
-  document.getElementById("contain").style.visibility = "visible";
-  
-},
-demoVisibility() {
-  
 
-   document.getElementById("change").style.visibility = "visible";
 
-}
-    }
-}
 
-=======
+
     import axios from 'axios'
     export default {
         name: 'login',
@@ -367,6 +353,17 @@ demoVisibility() {
             }
         }  ,
     methods:{
+        demoDisplay() {
+  
+  document.getElementById("contain").style.visibility = "visible";
+  
+},
+demoVisibility() {
+  
+
+   document.getElementById("change").style.visibility = "visible";
+
+},
     chercher_numcarte(){
         const option = {
             headers: {
@@ -381,7 +378,9 @@ console.log()
     }
     }
     }
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
+    
+
 
 </script>
 <style></style>

@@ -22,17 +22,17 @@
                   tbody-classes="list"
                   :data="tableData">
         <template slot="columns">
-<<<<<<< HEAD
+
           <th>Numéro de la carte</th>
           <th>Nom</th>
           <th>Prénom</th>
           <th>Etat</th>
-=======
+
           <th>Project</th>
           <th>Budget</th>
           <th>Status</th>
           <th>Users</th>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
           <th>Completion</th>
           <th></th>
         </template>
@@ -40,19 +40,17 @@
         <template slot-scope="{row}">
           <th scope="row">
             <div class="media align-items-center">
-<<<<<<< HEAD
-             
-=======
+
               <a href="#" class="avatar rounded-circle mr-3">
                 <img alt="Image placeholder" :src="row.img">
               </a>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
               <div class="media-body">
                 <span class="name mb-0 text-sm">{{row.title}}</span>
               </div>
             </div>
           </th>
-<<<<<<< HEAD
+
           <td >
             {{row.budget}}
           </td>
@@ -60,19 +58,18 @@
        
           </td>
           <td>
-=======
+
           <td class="budget">
             {{row.budget}}
           </td>
           <td>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
             <badge class="badge-dot mr-4" :type="row.statusType">
               <i :class="`bg-${row.statusType}`"></i>
               <span class="status">{{row.status}}</span>
             </badge>
           </td>
-<<<<<<< HEAD
-=======
+
           <td>
             <div class="avatar-group">
               <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
@@ -143,12 +140,12 @@
       return {
         tableData: [
           {
-<<<<<<< HEAD
+
             title: '5513.05666',
-=======
+
             img: 'img/theme/bootstrap.jpg',
             title: 'Argon Design System',
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
             budget: '$2500 USD',
             status: 'pending',
             statusType: 'warning',

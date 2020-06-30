@@ -42,7 +42,7 @@
 
 
                 
-=======
+
         <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
             <!-- Card stats -->
             <div class="row">
@@ -122,7 +122,7 @@
 </form>
 
                   </div></div></div></div>      
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
                  
  </div>
                              
@@ -132,17 +132,16 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-    /*import axios from 'axios'
-=======
+
+
     import axios from 'axios'
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
 
     export default {
     name: 'Notifier',
     data() {
         return {
-<<<<<<< HEAD
+
                 attachment: null,
                 form : new FormData
             }
@@ -162,29 +161,11 @@
             })
         }}
 
-    } */
-=======
-            file:""
-            }
-    }  ,
-        methods:{
-            uploadFile () {
-                this.file = this.$refs.file.files[0];
-            },
-            async handleSubmit() {
-                const formData = new FormData();
-                formData.append('file', this.file);
+    } 
 
-                    await axios.post('http://localhost:4000/sendEmail', formData)
+           
 
-
-            },
-
-
-           }
-    }
-
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+        
 </script>
 
 <style></style>
