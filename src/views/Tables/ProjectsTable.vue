@@ -39,11 +39,11 @@
               </div>
             </div>
           </th>
-          <td class="budget">
+          <td >
             {{row.budget}}
           </td>
           <td>
-            
+       
           </td>
           <td>
             <badge class="badge-dot mr-4" :type="row.statusType">
@@ -104,8 +104,7 @@
       return {
         tableData: [
           {
-            img: 'img/theme/bootstrap.jpg',
-            title: 'Argon Design System',
+            title: '5513.05666',
             budget: '$2500 USD',
             status: 'pending',
             statusType: 'warning',
