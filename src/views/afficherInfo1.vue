@@ -106,7 +106,7 @@
          
                             <div class="text-center">
 
-                                 <base-button   type="success" size="lg" @click="demoDisplay()"  >Afficher les informations</base-button>
+                                 <base-button   type="success" size="lg" @click="chercher_numcarte()"  >Afficher les informations</base-button>
 
                                  <base-button tag="a" href="/#/afficherinformation"  type="primary" size="lg"  class="active" role="button" aria-pressed="true" @click="chercher_numcarte">Afficher les informations</base-button>
 
@@ -353,11 +353,7 @@
             }
         }  ,
     methods:{
-        demoDisplay() {
-  
-  document.getElementById("contain").style.visibility = "visible";
-  
-},
+      
 demoVisibility() {
   
 
