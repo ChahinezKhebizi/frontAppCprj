@@ -5,14 +5,10 @@
                   containerClasses="px-4 container"
                   expand>
             <router-link slot="brand" class="navbar-brand" to="/">
-<<<<<<< HEAD
+
                 <img src="img/brand/white.png" style="
                                     width: 180px;
-=======
-                <img src="img/brand/green.png" style="
-                                    width: 120px;
-                                    height: 90px;
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
                                     " />
             </router-link>
 
@@ -21,11 +17,10 @@
                 <div class="navbar-collapse-header d-md-none">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-<<<<<<< HEAD
+
                             <router-link to="/#/accueil">
-=======
-                            <router-link to="/">
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
+
+
                                 <img src="img/brand/green.png" />
                             </router-link>
                         </div>
