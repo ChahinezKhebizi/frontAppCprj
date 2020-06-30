@@ -4,7 +4,6 @@
             <!-- Card stats -->
             <div class="row">
                 <div class="col-xl-3 col-lg-6">
-
                     <stats-card title="Total des cas confirmé"
                                 type="gradient-red"
                                 sub-title="350,897"
@@ -22,29 +21,11 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Total des cas suspects"
-
-                    <stats-card title="Total traffic"
-                                type="gradient-red"
-                                sub-title="350,897"
-                                icon="ni ni-active-40"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Total traffic"
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                                 type="gradient-orange"
                                 sub-title="2,356"
                                 icon="ni ni-chart-pie-35"
                                 class="mb-4 mb-xl-0"
                     >
-<<<<<<< HEAD
                      <template slot="footer">
                             <span class="text-danger mr-2"><i class="ni ni-fat-add"></i> 700  cas</span>
                             <span class="text-nowrap">Aujourd'hui</span>
@@ -67,33 +48,10 @@
                             <span class="text-nowrap">Aujourd'hui</span>
                         </template>
 
-
-
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 12.18%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Sales"
-                                type="gradient-green"
-                                sub-title="924"
-                                icon="ni ni-money-coins"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-danger mr-2"><i class="fa fa-arrow-down"></i> 5.72%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
->>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                     </stats-card>
 
                 </div>
                 <div class="col-xl-3 col-lg-6">
-
                     <stats-card title="Total des cas guéris"
                                 type="gradient-green"
                                 sub-title="15,000"
@@ -106,19 +64,7 @@
                         </template>
 
 
-
-                    <stats-card title="Performance"
-                                type="gradient-info"
-                                sub-title="49,65%"
-                                icon="ni ni-chart-bar-32"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 54.8%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-
+                       
                     </stats-card>
                 </div>
             </div>
@@ -131,13 +77,8 @@
                     <card type="default" header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
-
                                 
                                 <h5 class="h3 text-white mb-0">Statistiques :</h5>
-
-                                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                                <h5 class="h3 text-white mb-0">Sales value</h5>
-
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
@@ -146,11 +87,7 @@
                                            href="#"
                                            :class="{active: bigLineChart.activeIndex === 0}"
                                            @click.prevent="initBigChart(0)">
-
                                             <span class="d-none d-md-block">Par mois</span>
-
-                                            <span class="d-none d-md-block">Month</span>
-
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
@@ -159,11 +96,7 @@
                                            href="#"
                                            :class="{active: bigLineChart.activeIndex === 1}"
                                            @click.prevent="initBigChart(1)">
-
                                             <span class="d-none d-md-block">Par semaine</span>
-
-                                            <span class="d-none d-md-block">Week</span>
-
                                             <span class="d-md-none">W</span>
                                         </a>
                                     </li>
@@ -201,18 +134,6 @@
             </div>
             <!-- End charts-->
 
-
-            <!--Tables-->
-            <div class="row mt-5">
-                <div class="col-xl-8 mb-5 mb-xl-0">
-                    <page-visits-table></page-visits-table>
-                </div>
-                <div class="col-xl-4">
-                    <social-traffic-table></social-traffic-table>
-                </div>
-            </div>
-            <!--End tables-->
-
         </div>
 
     </div>
@@ -223,12 +144,15 @@
   import LineChart from '@/components/Charts/LineChart';
   import BarChart from '@/components/Charts/BarChart';
 
- 
+  // Tables
+  
+
   export default {
     components: {
       LineChart,
       BarChart,
-
+   
+    
     },
     data() {
       return {
