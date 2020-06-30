@@ -3,7 +3,11 @@
         <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
                      style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
                        <!-- Mask -->
+<<<<<<< HEAD
             <span class="mask bg-gradient-success opacity-7"></span>
+=======
+            <span class="mask bg-gradient-success opacity-4"></span>
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
             <!--base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8" style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;"-->
             <!-- Card stats -->
           
@@ -11,11 +15,18 @@
             
         </base-header>
 
+<<<<<<< HEAD
         <div class="container-fluid mt--8" >
              <div  class="row justify-content-center" >
             <div class="row">
 
                 <div class="col-xl-14 order-xl-1">
+=======
+        <div class="container-fluid mt--6" >
+            <div class="row">
+
+                <div class="col-xl-8 order-xl-1">
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                     <card shadow type="secondary">
                         <div slot="header" class="bg-white border-0">
                             <div class="row align-items-center">
@@ -143,7 +154,10 @@
                     </card>
                 </div>
             </div>
+<<<<<<< HEAD
             </div>
+=======
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
           
         </div>
     </div>

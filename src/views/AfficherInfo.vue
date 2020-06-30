@@ -15,11 +15,18 @@
 
 
 
+<<<<<<< HEAD
         <div class="container-fluid mt--8" >
             <div  class="row justify-content-center" >
             <div class="row">
 
                 <div class="col-xl-12 order-xl-1">
+=======
+        <div class="container-fluid mt--6" >
+            <div class="row">
+
+                <div class="col-xl-8 order-xl-1">
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                     <card shadow type="secondary">
                         <div slot="header" class="bg-white border-0">
                             <div class="row align-items-center">
@@ -40,7 +47,10 @@
                                                         input-classes="form-control-alternative" disabled
                                                         
                                          >
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                                         </base-input>
                                         </div>
                                    </div>
@@ -195,7 +205,10 @@
                             </form>
                         </template>
                     </card>
+<<<<<<< HEAD
                     </div>
+=======
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
                 </div>
             </div>
           
@@ -203,12 +216,38 @@
     </div>
 </template>
 <script>
+<<<<<<< HEAD
 export default{
+=======
+    import axios from 'axios'
+export default{
+        name: 'afficherinfo',
+        data() {
+            return {
+                model: {
+                    nom : '',
+                    prenom : '',
+                    numTlfn:'',
+                    dateNaissance :'',
+                    lieuNaissance : '',
+                    adresse :'',
+                    carteNational:'',
+                    commune:'',
+                    wilaya:''
+                }
+            }
+        }  ,
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
     methods:{
         demoDisplay() {
   document.getElementById("button1").style.visibility = "visible";
   document.getElementById("button2").style.visibility = "visible";
+<<<<<<< HEAD
 }
+=======
+},
+
+>>>>>>> 8f329594029da2e42833265039dc45490f9daf98
     }
 }
 
