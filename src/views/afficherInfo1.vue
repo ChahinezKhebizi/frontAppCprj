@@ -251,7 +251,10 @@
 </template>
 <script>
 
-//import axios from 'axios'
+
+
+
+import axios from 'axios'
     export default {
         name: 'login',
         data() {
@@ -262,34 +265,41 @@
             }
         }  ,
     methods:{
-  
+
+
 demoVisibility() {
-  
+
 
    document.getElementById("change").style.visibility = "visible";
 
 },
     chercher_numcarte(){
 
-  /*
+
         const option = {
             headers: {
                 'Content-Type': 'application/json'
             }
         }
         axios.get('http://localhost:4000/getCasSuspect',{carteNational:this.user.carteNational},option).then(function (response){
-            localStorage.setItem('nom', JSON.stringify(response.data.nom).substring(1, JSON.stringify(response.data.nom).length - 1));
-            localStorage.setItem('prenom', JSON.stringify(response.data.prenom).substring(1, JSON.stringify(response.data.prenom).length - 1));
-console.log()
+            document.getElementById("etat").value = response.etat;
+            document.getElementById("nom").value = response.nom;
+            document.getElementById("prenom").value = response.prenom;
+            document.getElementById("CIN").value = response.carteNational;
+            document.getElementById("numTel").value = response.numTlfn;
+            document.getElementById("dateNaiss").value = response.dateNaissance;
+            document.getElementById("lieuNaiss").value = response.lieuNaissance;
+            document.getElementById("adr").value = response.adresse;
+            document.getElementById("commune").value = response.commune;
         })
-        */
-        
+
         document.getElementById("contain").style.visibility = "visible";
-        
+
     }
     }
     }
 
+    
 
 </script>
 <style></style>
