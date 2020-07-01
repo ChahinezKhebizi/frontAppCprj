@@ -2,7 +2,9 @@
 
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
+        <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                     <span class="mask bg-gradient-success opacity-6"></span>
             <!-- Card stats -->
             <div class="row">
 
@@ -209,6 +211,7 @@
                         </template>
                     </card>
                     </div>
+
                 </div>
             </div>
              </div>
@@ -235,11 +238,14 @@
 
                             </base-dropdown>      </div>
                             <div class="col-lg-6">
-                                 <base-button  id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
+                                 <base-button  @click="demoVisibility2()" id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
                   </div> </div> </div> </div> </card> </div>
 
                        </div>
                 </div>
+                <base-alert style=" visibility:hidden" id="alert" type="success">
+              <strong>Le nouvel état est enregistré avec succes!</strong> 
+             </base-alert>
             </div>
 
 
@@ -272,6 +278,12 @@ demoVisibility() {
 
 
    document.getElementById("change").style.visibility = "visible";
+
+},
+demoVisibility2() {
+
+
+   document.getElementById("alert").style.visibility = "visible";
 
 },
     chercher_numcarte(){

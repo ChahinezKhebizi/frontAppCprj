@@ -2,7 +2,7 @@
     <div>
         <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
                      style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
-                     <span class="mask bg-gradient-success opacity-7"></span>
+                     <span class="mask bg-gradient-success opacity-6"></span>
          
         </base-header>
    
@@ -32,7 +32,12 @@
 
                              </card>
                         </div>
+             
+
                          </div>
+                          <base-alert style=" visibility:hidden" id="alert" type="success">
+              <strong>Notification envoyée avec succés!</strong> 
+             </base-alert>
                            </div>
 
 
@@ -60,12 +65,16 @@
             }
     }  ,
         methods:{
+         
             uploadFile () {
                 this.file = this.$refs.file.files[0];
             },
             async handleSubmit() {
+                 document.getElementById("alert").style.visibility = "visible";
+
                 const formData = new FormData();
                 formData.append('file', this.file);
+
                     await axios.post('http://localhost:4000/sendEmail', formData)
             },
            }

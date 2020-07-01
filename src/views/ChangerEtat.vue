@@ -2,7 +2,7 @@
     <div>
            <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
                      style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
-                     <span class="mask bg-gradient-success opacity-4"></span>
+                     <span class="mask bg-gradient-success opacity-6"></span>
             <!-- Card stats -->
          <div class="row">
 

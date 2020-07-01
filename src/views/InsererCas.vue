@@ -145,8 +145,8 @@
             </div>
             </div>
             <base-alert style=" visibility:hidden" id="alert" type="success">
-        <strong>Le nouvel état est enregistré avec succes!</strong> 
-    </base-alert>
+              <strong>Le nouvel cas est enregistré avec succes!</strong> 
+             </base-alert>
           
         </div>
     </div>

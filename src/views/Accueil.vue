@@ -178,7 +178,7 @@
         let chartData = {
           datasets: [
             {
-              label: 'Catégories des malades',
+              label: 'nombre des cas',
               data: this.bigLineChart.allData[index]
             }
           ],
