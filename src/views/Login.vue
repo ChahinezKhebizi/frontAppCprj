@@ -1,17 +1,12 @@
 <template>
-
-      
         <div class="row justify-content-center">
-                              
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
-                            
+                   
                     <div class="card-body px-lg-5 py-lg-5">
-
                         <div class="text-center text-muted mb-4">
                             <strong>Se connecter </strong>
                         </div>
-
                         <form role="form">
                             <base-input class="input-group-alternative mb-3"
                                         placeholder="Nom d'utilisateur"
@@ -31,9 +26,7 @@
                                 <span class="text-muted">Remember me</span>
                             </base-checkbox>
                             <div class="text-center">
-                                <base-button type="primary" class="my-2" @click="login"
-tag="a" size="lg" href="/#/accueil"  role="button" aria-pressed="true">
-                            Se connecter</base-button>
+                                <base-button type="primary" class="my-4" @click="login">Se connecter</base-button>
                             </div>
                         </form>
                     </div>
@@ -43,10 +36,9 @@ tag="a" size="lg" href="/#/accueil"  role="button" aria-pressed="true">
                         <a href="#" class="text-light"><small>Mot de passe oublié?</small></a>
                     </div>
                     
-           
+                </div>
             </div>
         </div>
-         </div>
 </template>
 <script>
 import axios from 'axios'
