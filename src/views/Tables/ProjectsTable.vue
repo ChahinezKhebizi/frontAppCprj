@@ -10,7 +10,7 @@
           </h3>
         </div>
         <div class="col text-right">
-          <base-button type="primary" size="sm">See all</base-button>
+          <base-button type="primary" size="sm">Afficher tous</base-button>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
           <th>Nom</th>
           <th>Prénom</th>
           <th>Etat</th>
-          <th>Completion</th>
+          
           <th></th>
         </template>
 
@@ -35,15 +35,15 @@
             <div class="media align-items-center">
              
               <div class="media-body">
-                <span class="name mb-0 text-sm">{{row.title}}</span>
+                <span class="name mb-0 text-sm">{{row.nmr}}</span>
               </div>
             </div>
           </th>
           <td >
-            {{row.budget}}
+            {{row.nom}}
           </td>
           <td>
-       
+               {{row.prenom}}
           </td>
           <td>
             <badge class="badge-dot mr-4" :type="row.statusType">
@@ -52,17 +52,7 @@
             </badge>
           </td>
 
-          <td>
-            <div class="d-flex align-items-center">
-              <span class="completion mr-2">{{row.completion}}%</span>
-              <div>
-                <base-progress :type="row.statusType"
-                               :show-percentage="false"
-                               class="pt-0"
-                               :value="row.completion"/>
-              </div>
-            </div>
-          </td>
+          
 
           <td class="text-right">
             <base-dropdown class="dropdown"
@@ -104,44 +94,57 @@
       return {
         tableData: [
           {
-            title: '5513.05666',
-            budget: '$2500 USD',
-            status: 'pending',
+            nmr: '100551305666',
+            nom: 'ALIOUA',
+            prenom: 'Amine',
             statusType: 'warning',
-            completion: 60
+            status:'suspect',
+            
           },
           {
-            img: 'img/theme/angular.jpg',
-            title: 'Angular Now UI Kit PRO',
-            budget: '$1800 USD',
-            status: 'completed',
-            statusType: 'success',
-            completion: 100
-          },
-          {
-            img: 'img/theme/sketch.jpg',
-            title: 'Black Dashboard',
-            budget: '$3150 USD',
-            status: 'delayed',
+            nmr: '100451304892',
+            nom: 'MUSTAFA',
+            prenom: 'Adel',
             statusType: 'danger',
-            completion: 72
+            status:'confirmé',
+          
           },
           {
-            img: 'img/theme/react.jpg',
-            title: 'React Material Dashboard',
-            budget: '$4400 USD',
-            status: 'on schedule',
-            statusType: 'info',
-            completion: 90
+             nmr: '100491121789',
+            nom: 'MUSTAFA',
+            prenom: 'Wardia',
+            statusType: 'warning',
+            status:'suspect',
           },
           {
-            img: 'img/theme/vue.jpg',
-            title: 'Vue Paper UI Kit PRO',
-            budget: '$2200 USD',
-            status: 'completed',
+            nmr: '100851805667',
+            nom: 'BELAL',
+            prenom: 'Walid',
             statusType: 'success',
-            completion: 100
-          }
+            status:'guéri',
+          },
+          {
+             nmr: '100551305666',
+            nom: 'MEBAREK',
+            prenom: 'Aziz',
+            statusType: 'info',
+            status:'décédé',
+          
+          },
+          {
+            nmr: '100951805999',
+            nom: 'SAADI',
+            prenom: 'Yacine',
+            statusType: 'success',
+            status:'guéri',
+          },
+          {
+             nmr: '100591121488',
+            nom: 'BOUGESSA',
+            prenom: 'Fatiha',
+            statusType: 'danger',
+            status:'confirmé',
+          },
         ]
       }
     }

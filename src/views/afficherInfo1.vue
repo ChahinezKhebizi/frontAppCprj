@@ -1,6 +1,9 @@
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
+        
+          <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                     <span class="mask bg-gradient-success opacity-8"></span>
             <!-- Card stats -->
             <div class="row">
 
@@ -10,21 +13,21 @@
             <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
-
+                   
               <div class="card-body px-lg-5 py-lg-4">
-
+                       
                         <form role="form">
 
                             <base-input label ="Numéro de carte d'identité" class="input-group-alternative"
                                         placeholder="insérer le numéro">
-                           </base-input>
-
-
-
-
+                           </base-input>  
+                            
+                         
+      
+         
                             <div class="text-center">
                                  <base-button   type="success" size="lg" @click="chercher_numcarte()"  >Afficher les informations</base-button>
-
+            
                             </div>
                         </form>
                     </div>
@@ -38,10 +41,10 @@
         </base-header>
 
 
-
-
+       
+         
              <!--form-->
-
+   
 
         <div class="container-fluid mt--7" id="contain" style="visibility:hidden;">
             <div  class="row justify-content-center" >
@@ -54,20 +57,19 @@
                                 <div class="col-8">
                                     <h3 class="mb-0">Les informations relatives à ce cas :</h3>
                                 </div>
-
+                              
                             </div>
                         </div>
                         <template>
                             <form >
-
+                                
                                 <div class="pl-lg-12">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Etat"
-                                                        id="etat"
                                                         input-classes="form-control-alternative" disabled
-
+                                                        
                                          >
 
                                         </base-input>
@@ -77,9 +79,9 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Nom"
-                                                        id="nom"
+                                                   
                                                         input-classes="form-control-alternative" disabled
-
+                                                       
                                            >
                                         </base-input>
 
@@ -87,10 +89,10 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Prénom"
-                                                        id="prenom"
+                                                      
                                                         input-classes="form-control-alternative"
                                                         disabled
-
+                                                    
                                              >
                                         </base-input>
                                         </div>
@@ -99,7 +101,6 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Numéro de la pièce d'identité"
-                                                        id="CIN"
                                                         placeholder="insérer le numéro ici"
                                                         input-classes="form-control-alternative"
                                                    disabled
@@ -111,31 +112,30 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Numero de Téléphone"
-                                                        id="numTel"
+                                                        
                                                         input-classes="form-control-alternative"
                                                         disabled
-
+                                            
 
                                              >
                                         </base-input>
                                         </div>
-
-
-
+                                  
+                                        
+                                      
                                     </div>
                                 </div>
                                 <hr class="my-4" />
-
+                                
                                 <div class="pl-lg-12">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Date de naissance"
-                                                        id="dateNaiss"
                                                         placeholder=""
                                                         input-classes="form-control-alternative"
                                                          disabled
-
+                                                        
 
 
                                              >
@@ -144,11 +144,10 @@
                                           <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Lieux de naissance"
-                                                        id="lieuNaiss"
                                                         placeholder="Lieux"
                                                         input-classes="form-control-alternative"
                                                          disabled
-
+                                                     
 
                                            >
                                         </base-input>
@@ -158,30 +157,29 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Wilaya actuelle"
-
+                                                        
                                                         input-classes="form-control-alternative"
                                                          disabled
-
+                                                       
                                            >
                                         </base-input>
                                         </div>
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Commune actuelle"
-                                                        id="commune"
+                                                        
                                                         input-classes="form-control-alternative"
                                                          disabled
-
+                                                       
 
 
                                              >
                                         </base-input>
                                         </div>
-
+                                        
                                     <div class="col-lg-12">
                                             <base-input alternative=""
                                                         label="Adresse exacte"
-                                                        id="adr"
                                                         placeholder="adresse"
                                                         input-classes="form-control-alternative"
                                                        disabled
@@ -193,16 +191,16 @@
                                           </div>
                                 </div>
                                  <div class="text-center">
-
-                                <base-button  @click="demoVisibility()" tag="a" type="secondary" size="lg"  class="active" role="button" aria-pressed="true"  >Changer l'état de ce cas</base-button>
+                          
+                                <base-button  @click="demoVisibility()"  type="danger" size="lg" >Changer l'état de ce cas</base-button>
                              </div>
 
 
+              
+                               
 
-
-
-
-
+           
+                               
                             </form>
                         </template>
                     </card>
@@ -215,10 +213,10 @@
             <div  class="row justify-content-center" >
             <div class="row">
               <div class="col-lg-12 col-md-12" >
-
+               
                    <card shadow type="secondary">
                           <div class="card-body px-lg-12 py-lg-12">
-
+                                        
                              <div class="pl-lg-12">
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -230,28 +228,31 @@
                               <a class="dropdown-item" >Négatif</a>
                                <a class="dropdown-item" >Guéri</a>
                               <a class="dropdown-item" >Décédé</a>
-
+                           
                             </base-dropdown>      </div>
                             <div class="col-lg-6">
-                                 <base-button  id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
+                                 <base-button   outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
                   </div> </div> </div> </div> </card> </div>
 
                        </div>
                 </div>
             </div>
+             
+                                
+          
+       
+           
 
 
-
-
-
-
-
-
-
+         
+      
 
     </div>
 </template>
 <script>
+
+
+
 
 import axios from 'axios'
     export default {
@@ -298,6 +299,7 @@ demoVisibility() {
     }
     }
 
+    
 
 </script>
 <style></style>
