@@ -1,41 +1,38 @@
-
-
 <template>
     <div>
-        <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
-                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
-                     <span class="mask bg-gradient-success opacity-6"></span>
+        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
             <!-- Card stats -->
             <div class="row">
 
 
 
-          <div class="container-fluid " >
-            <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-7">
-                <div class="card bg-secondary shadow border-0">
+                <div class="container-fluid " >
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5 col-md-7">
+                            <div class="card bg-secondary shadow border-0">
 
-              <div class="card-body px-lg-5 py-lg-4">
+                                <div class="card-body px-lg-5 py-lg-4">
 
-                        <form role="form">
+                                    <form role="form">
 
-                            <base-input label ="Numéro de carte d'identité" class="input-group-alternative"
-                                        placeholder="insérer le numéro">
-                           </base-input>
+                                        <base-input ref="NC" label ="Numéro de carte d'identité" class="input-group-alternative"
+                                                    placeholder="insérer le numéro"
+                                                    v-model="user.numID">
+                                        </base-input>
 
 
 
 
-                            <div class="text-center">
-                                 <base-button   type="success" size="lg" @click="chercher_numcarte()"  >Afficher les informations</base-button>
+                                        <div class="text-center">
+                                            <base-button   type="success" size="lg" @click="chercher_numcarte"  >Afficher les informations</base-button>
 
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-               </div>
                 </div>
-           </div>
-     </div>
 
 
             </div>
@@ -44,162 +41,174 @@
 
 
 
-             <!--form-->
+        <!--form-->
 
 
         <div class="container-fluid mt--7" id="contain" style="visibility:hidden;">
             <div  class="row justify-content-center" >
-            <div class="row">
+                <div class="row">
 
-                <div class="col-xl-12 order-xl-1">
-                    <card shadow type="secondary">
-                        <div slot="header" class="bg-white border-0">
-                            <div class="row align-items-center">
-                                <div class="col-8">
-                                    <h3 class="mb-0">Les informations relatives à ce cas :</h3>
+                    <div class="col-xl-12 order-xl-1">
+                        <card shadow type="secondary">
+                            <div slot="header" class="bg-white border-0">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <h3 class="mb-0">Les informations relatives à ce cas :</h3>
+                                    </div>
+
                                 </div>
-
                             </div>
-                        </div>
-                        <template>
-                            <form >
+                            <template>
+                                <form >
 
-                                <div class="pl-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Etat"
-                                                        id="etat"
-                                                        input-classes="form-control-alternative" disabled
+                                    <div class="pl-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Etat"
+                                                            id="etat"
+                                                            input-classes="form-control-alternative" disabled
+                                                            v-model="user.etat"
+                                                >
 
-                                         >
-
-                                        </base-input>
+                                                </base-input>
+                                            </div>
                                         </div>
-                                   </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Nom"
-                                                        id="nom"
-                                                        input-classes="form-control-alternative" disabled
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Nom"
+                                                            id="nom"
+                                                            input-classes="form-control-alternative" disabled
+                                                            v-model="user.nom"
 
-                                           >
-                                        </base-input>
+                                                >
 
+                                                </base-input>
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Prénom"
+                                                            id="prenom"
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.prenom"
+
+                                                >
+                                                </base-input>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Prénom"
-                                                        id="prenom"
-                                                        input-classes="form-control-alternative"
-                                                        disabled
-
-                                             >
-                                        </base-input>
-                                        </div>
-                                    </div>
-                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Numéro de la pièce d'identité"
-                                                        id="CIN"
-                                                        placeholder="insérer le numéro ici"
-                                                        input-classes="form-control-alternative"
-                                                   disabled
-
-
-                                             >
-                                        </base-input>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Numero de Téléphone"
-                                                        id="numTel"
-                                                        input-classes="form-control-alternative"
-                                                        disabled
-
-
-                                             >
-                                        </base-input>
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Numéro de la pièce d'identité"
+                                                            id="CIN"
+                                                            placeholder="insérer le numéro ici"
+                                                            input-classes="form-control-alternative"
+                                                            v-model="user.carteNational"
 
 
 
-                                    </div>
-                                </div>
-                                <hr class="my-4" />
+                                                >
+                                                </base-input>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Numero de Téléphone"
+                                                            id="numTel"
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.numTlfn"
 
-                                <div class="pl-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Date de naissance"
-                                                        id="dateNaiss"
-                                                        placeholder=""
-                                                        input-classes="form-control-alternative"
-                                                         disabled
-
-
-
-                                             >
-                                        </base-input>
-                                        </div>
-                                          <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Lieux de naissance"
-                                                        id="lieuNaiss"
-                                                        placeholder="Lieux"
-                                                        input-classes="form-control-alternative"
-                                                         disabled
+                                                >
+                                                </base-input>
+                                            </div>
 
 
-                                           >
-                                        </base-input>
+
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Wilaya actuelle"
+                                    <hr class="my-4" />
 
-                                                        input-classes="form-control-alternative"
-                                                         disabled
+                                    <div class="pl-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Date de naissance"
+                                                            id="dateNaiss"
+                                                            placeholder=""
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.dateNaissance"
 
-                                           >
-                                        </base-input>
+
+
+                                                >
+                                                </base-input>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Lieux de naissance"
+                                                            id="lieuNaiss"
+                                                            placeholder="Lieux"
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.lieuNaissance"
+
+
+                                                >
+                                                </base-input>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Commune actuelle"
-                                                        id="commune"
-                                                        input-classes="form-control-alternative"
-                                                         disabled
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Wilaya actuelle"
+                                                            id="wilaya"
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.wilaya"
+
+                                                >
+                                                </base-input>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <base-input alternative=""
+                                                            label="Commune actuelle"
+                                                            id="Commune actuelle"
+
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.commune"
 
 
 
-                                             >
-                                        </base-input>
+                                                >
+                                                </base-input>{{user.commune}}
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <base-input alternative=""
+                                                            label="Adresse exacte"
+                                                            id="adr"
+                                                            placeholder="adresse"
+                                                            input-classes="form-control-alternative"
+                                                            disabled
+                                                            v-model="user.adresse"
+
+
+
+
+                                                >
+                                                </base-input> {{user.adresse}}
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="text-center">
 
-                                    <div class="col-lg-12">
-                                            <base-input alternative=""
-                                                        label="Adresse exacte"
-                                                        id="adr"
-                                                        placeholder="adresse"
-                                                        input-classes="form-control-alternative"
-                                                       disabled
-
-
-                                           >
-                                        </base-input>
-                                        </div>
-                                          </div>
-                                </div>
-                                 <div class="text-center">
-
-                                <base-button  @click="demoVisibility()" tag="a" type="secondary" size="lg"  class="active" role="button" aria-pressed="true"  >Changer l'état de ce cas</base-button>
-                             </div>
+                                        <base-button  @click="demoVisibility" tag="a" type="secondary" size="lg"  class="active" role="button" aria-pressed="true"  >Changer l'état de ce cas</base-button>
+                                    </div>
 
 
 
@@ -207,46 +216,43 @@
 
 
 
-                            </form>
-                        </template>
-                    </card>
+                                </form>
+                            </template>
+                        </card>
                     </div>
-
                 </div>
             </div>
-             </div>
+        </div>
 
-     <div class="container-fluid " id="change" style="visibility:hidden;">
+        <div class="container-fluid " id="change" style="visibility:hidden;">
             <div  class="row justify-content-center" >
-            <div class="row">
-              <div class="col-lg-12 col-md-12" >
+                <div class="row">
+                    <div class="col-lg-12 col-md-12" >
 
-                   <card shadow type="secondary">
-                          <div class="card-body px-lg-12 py-lg-12">
+                        <card shadow type="secondary">
+                            <div class="card-body px-lg-12 py-lg-12">
 
-                             <div class="pl-lg-12">
+                                <div class="pl-lg-12">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <base-dropdown >
-                              <base-button   id="button1" slot="title" type="info" class="dropdown-toggle" block>
-                                Choisir le nouvel état
-                              </base-button>
-                              <a class="dropdown-item" >Positif (confirmé)</a>
-                              <a class="dropdown-item" >Négatif</a>
-                               <a class="dropdown-item" >Guéri</a>
-                              <a class="dropdown-item" >Décédé</a>
+                                                <base-button   id="button1" slot="title" type="info" class="dropdown-toggle" block>
+                                                    Choisir le nouvel état
+                                                </base-button>
+                                                <a class="dropdown-item" href="#" @click="changerEtatToconfirme">Positif (confirmé)</a>
+                                                <a class="dropdown-item" href="#" @click="changerEtatToNegtive">Négatif</a>
+                                                <a class="dropdown-item" href="#" @click="changerEtatToGuéri">Guéri</a>
+                                                <a class="dropdown-item" href="#"  @click="changerEtatToDecede">Décédé</a>
 
-                            </base-dropdown>      </div>
-                            <div class="col-lg-6">
-                                 <base-button  @click="demoVisibility2()" id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
-                  </div> </div> </div> </div> </card> </div>
+                                            </base-dropdown>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <base-button  id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
+                                        </div> </div> </div> </div> </card> </div>
 
-                       </div>
                 </div>
-                <base-alert style=" visibility:hidden" id="alert" type="success">
-              <strong>Le nouvel état est enregistré avec succes!</strong> 
-             </base-alert>
             </div>
+        </div>
 
 
 
@@ -261,58 +267,101 @@
 </template>
 <script>
 
-import axios from 'axios'
+    import axios from 'axios'
     export default {
-        name: 'login',
+        name: 'envoienotif',
         data() {
             return {
-                user: {
-                    carteNational:''
+                user: {etat:'',
+                    numID:'',
+                    nom : '',
+                    prenom : '',
+                    numTlfn:'',
+                    dateNaissance :'',
+                    lieuNaissance : '',
+                    adresse :'',
+                    carteNational:'',
+                    commune:'',
+                    wilaya:''
+
                 }
             }
         }  ,
-    methods:{
+        methods:{
 
 
-demoVisibility() {
+            demoVisibility() {
 
 
-   document.getElementById("change").style.visibility = "visible";
+                document.getElementById("change").style.visibility = "visible";
 
-},
-demoVisibility2() {
-
-
-   document.getElementById("alert").style.visibility = "visible";
-
-},
-    chercher_numcarte(){
+            },
+            chercher_numcarte(){
 
 
-        const option = {
-            headers: {
-                'Content-Type': 'application/json'
+                const option = {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+                axios.post('http://localhost:4000/getCasSuspect',{carteNational:this.user.numID},option).then(response => (
+        document.getElementById("adr").value = response.data.adresse,
+        document.getElementById("etat").value = response.data.etat,
+        document.getElementById("wilaya").value = response.data.wilaya,
+        document.getElementById("Commune actuelle").value = response.data.commune,
+        document.getElementById("dateNaiss").value = response.data.dateNaissance,
+        document.getElementById("lieuNaiss").value = response.data.lieuNaissance,
+        document.getElementById("CIN").value = response.data.carteNational,
+        document.getElementById("numTel").value = response.data.numTlfn,
+        document.getElementById("nom").value = response.data.nom,
+        document.getElementById("prenom").value = response.data.prenom
+
+
+
+                ))
+
+                document.getElementById("contain").style.visibility = "visible";
+
             }
+        },
+        changerEtatToconfirme(){
+            const option = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('http://localhost:4000/changerEtatToConfirme',{carteNational:this.user.carteNational},option)
         }
-        axios.get('http://localhost:4000/getCasSuspect',{carteNational:this.user.carteNational},option).then(function (response){
-            document.getElementById("etat").value = response.etat;
-            document.getElementById("nom").value = response.nom;
-            document.getElementById("prenom").value = response.prenom;
-            document.getElementById("CIN").value = response.carteNational;
-            document.getElementById("numTel").value = response.numTlfn;
-            document.getElementById("dateNaiss").value = response.dateNaissance;
-            document.getElementById("lieuNaiss").value = response.lieuNaissance;
-            document.getElementById("adr").value = response.adresse;
-            document.getElementById("commune").value = response.commune;
-        })
+        ,
+        changerEtatToNegtive(){
+            const option = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('http://localhost:4000/changerEtatToNegtive',{carteNational:this.user.carteNational},option)
+        }
+        ,  changerEtatToGuéri(){
+            const option = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('http://localhost:4000/changerEtatToGueri',{carteNational:this.user.carteNational},option)
+        },
+        changerEtatToDecede(){
+            const option = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('http://localhost:4000/changerEtatToDecede',{carteNational:this.user.carteNational},option)
+        }
 
-        document.getElementById("contain").style.visibility = "visible";
 
-    }
-    }
+
     }
 
 
 </script>
 <style></style>
-

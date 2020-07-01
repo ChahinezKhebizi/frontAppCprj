@@ -10,7 +10,7 @@
           </h3>
         </div>
         <div class="col text-right">
-          <base-button type="primary" size="sm">Afficher tous</base-button>
+          <base-button type="primary" size="sm" @click="get_cass">See all</base-button>
         </div>
       </div>
     </div>
@@ -20,30 +20,48 @@
                   :class="type === 'dark' ? 'table-dark': ''"
                   :thead-classes="type === 'dark' ? 'thead-dark': 'thead-light'"
                   tbody-classes="list"
-                  :data="tableData">
+                  :data="cass">
+
         <template slot="columns">
+          <tbody>
           <th>Numéro de la carte</th>
           <th>Nom</th>
           <th>Prénom</th>
-          <th>Etat</th>
-          
-          <th></th>
+          <th>numéro de Tléphone</th>
+          <th>date de naissance</th>
+          <th>lieu de naissance</th>
+          <th>adresse</th>
+
+          <tr v-for="cas in cass" :key="cas">
+            <td>{{cas.carteNational}}</td>
+            <td>{{cas.nom}}</td>
+            <td>{{cas.prenom}}</td>
+            <td>{{cas.numTlfn}}</td>
+            <td>{{cas.dateNaissance}}</td>
+            <td>{{cas.lieuNaissance}}</td>
+            <td>{{cas.adresse}}</td>
+          </tr>
+          </tbody>
+
+
+
+
         </template>
 
         <template slot-scope="{row}">
           <th scope="row">
             <div class="media align-items-center">
-             
+
               <div class="media-body">
-                <span class="name mb-0 text-sm">{{row.nmr}}</span>
+                <span class="name mb-0 text-sm">{{row.title}}</span>
               </div>
             </div>
           </th>
           <td >
-            {{row.nom}}
+            {{row.budget}}
           </td>
           <td>
-               {{row.prenom}}
+
           </td>
           <td>
             <badge class="badge-dot mr-4" :type="row.statusType">
@@ -52,7 +70,17 @@
             </badge>
           </td>
 
-          
+          <td>
+            <div class="d-flex align-items-center">
+              <span class="completion mr-2">{{row.completion}}%</span>
+              <div>
+                <base-progress :type="row.statusType"
+                               :show-percentage="false"
+                               class="pt-0"
+                               :value="row.completion"/>
+              </div>
+            </div>
+          </td>
 
           <td class="text-right">
             <base-dropdown class="dropdown"
@@ -82,6 +110,7 @@
   </div>
 </template>
 <script>
+  import axios from 'axios'
   export default {
     name: 'projects-table',
     props: {
@@ -92,60 +121,16 @@
     },
     data() {
       return {
-        tableData: [
-          {
-            nmr: '100551305666',
-            nom: 'ALIOUA',
-            prenom: 'Amine',
-            statusType: 'warning',
-            status:'suspect',
-            
-          },
-          {
-            nmr: '100451304892',
-            nom: 'MUSTAFA',
-            prenom: 'Adel',
-            statusType: 'danger',
-            status:'confirmé',
-          
-          },
-          {
-             nmr: '100491121789',
-            nom: 'MUSTAFA',
-            prenom: 'Wardia',
-            statusType: 'warning',
-            status:'suspect',
-          },
-          {
-            nmr: '100851805667',
-            nom: 'BELAL',
-            prenom: 'Walid',
-            statusType: 'success',
-            status:'guéri',
-          },
-          {
-             nmr: '100551305666',
-            nom: 'MEBAREK',
-            prenom: 'Aziz',
-            statusType: 'info',
-            status:'décédé',
-          
-          },
-          {
-            nmr: '100951805999',
-            nom: 'SAADI',
-            prenom: 'Yacine',
-            statusType: 'success',
-            status:'guéri',
-          },
-          {
-             nmr: '100591121488',
-            nom: 'BOUGESSA',
-            prenom: 'Fatiha',
-            statusType: 'danger',
-            status:'confirmé',
-          },
-        ]
+        cass: []
+      }},
+    methods:{
+      get_cass() {
+        const option = {
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          }
+        }
+        axios.get('http://localhost:4000/getCasSuspects', option).then(response => (this.cass = response.data, alert(this.cass)))
       }
     }
   }
