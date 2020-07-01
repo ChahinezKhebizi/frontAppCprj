@@ -1,6 +1,8 @@
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
+          <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                     <span class="mask bg-gradient-success opacity-7"></span>
             <!-- Card stats -->
             <div class="row">
                 <div class="col-xl-3 col-lg-6">
@@ -91,15 +93,7 @@
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link py-2 px-3"
-                                           href="#"
-                                           :class="{active: bigLineChart.activeIndex === 1}"
-                                           @click.prevent="initBigChart(1)">
-                                            <span class="d-none d-md-block">Par semaine</span>
-                                            <span class="d-md-none">W</span>
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -118,8 +112,8 @@
                     <card header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                                <h5 class="h3 mb-0">Total orders</h5>
+                                <h6 class="h3 mb-0">Pourcentages des Catégories des cas décédés</h6>
+                               
                             </div>
                         </div>
 
@@ -142,7 +136,7 @@
   // Charts
   import * as chartConfigs from '@/components/Charts/config';
   import LineChart from '@/components/Charts/LineChart';
-  import BarChart from '@/components/Charts/BarChart';
+  import BarChart from '@/components/Charts/PieChart';
 
   // Tables
   
@@ -158,8 +152,8 @@
       return {
         bigLineChart: {
           allData: [
-            [0, 20, 10, 30, 15, 40, 20, 60, 60],
-            [0, 20, 5, 25, 10, 30, 15, 40, 40]
+            [10, 30, 15, 40, 55, 60, 40, 70, 90],
+           
           ],
           activeIndex: 0,
           chartData: {
@@ -170,10 +164,10 @@
         },
         redBarChart: {
           chartData: {
-            labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['plus de 50 ans', 'entre 20 ans et 50 ans ', 'moins de 20 ans'],
             datasets: [{
-              label: 'Sales',
-              data: [25, 20, 30, 22, 17, 29]
+            
+              data: [80, 15, 5]
             }]
           }
         }
@@ -184,7 +178,7 @@
         let chartData = {
           datasets: [
             {
-              label: 'Performance',
+              label: 'Catégories des malades',
               data: this.bigLineChart.allData[index]
             }
           ],
