@@ -136,7 +136,7 @@
                                           </div>
                                 </div>
                                  <div class="text-center">
-                                <base-button type="primary" class="my-4" block @click="crerCas">Enregistrer</base-button>
+                                <base-button type="success" class="my-4" block @click="crerCas">Enregistrer</base-button>
                             </div>
                             </form>
                         </template>
@@ -144,9 +144,6 @@
                 </div>
             </div>
             </div>
-            <base-alert style=" visibility:hidden" id="alert" type="success">
-        <strong>Le nouvel état est enregistré avec succes!</strong> 
-    </base-alert>
           
         </div>
     </div>
@@ -171,7 +168,6 @@
         }
     }  ,
     methods:{
-
         crerCas(){
             const option = {
                 headers: {
@@ -194,8 +190,6 @@
                 // eslint-disable-next-line no-console
                 console.log(response);
             })
-
-   document.getElementById("alert").style.visibility = "visible";
         }}}
 
   
