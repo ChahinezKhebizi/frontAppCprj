@@ -6,7 +6,7 @@
             <navbar-toggle-button @click.native="showSidebar">
                 <span class="navbar-toggler-icon"></span>
             </navbar-toggle-button>
-            <router-link class="navbar-brand" to="/">
+            <router-link class="navbar-brand" to="/accueil">
                 <img src="img/brand/green.png"  class="navbar-brand-img" alt="..." >
             </router-link>
 

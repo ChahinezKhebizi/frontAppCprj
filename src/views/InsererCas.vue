@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <template>
-                                <form >
+                                <form id="frm">
 
                                     <div class="pl-lg-12">
 
@@ -145,6 +145,11 @@
                 </div>
             </div>
 
+   <base-alert style=" visibility:hidden" id="alert" type="success">
+              <strong>Insertion avec succés!</strong> 
+             </base-alert>
+
+
         </div>
     </div>
 </template>
@@ -169,6 +174,8 @@
         }  ,
         methods:{
             crerCas(){
+                document.getElementById("frm").reset();
+                document.getElementById("alert").style.visibility = "visible";
                 const option = {
                     headers: {
                         'Content-Type': 'application/json'
@@ -189,6 +196,7 @@
                     //handle success
                     // eslint-disable-next-line no-console
                     console.log(response);
+                    
                 })
             }}}
 

@@ -24,7 +24,7 @@
                         <div class="text-center text-muted mb-4">
                             <strong>Veuillez entrer les informations du cas que vous voulez changer son état </strong>
                         </div>
-                        <form role="form">
+                        <form id="frm" role="form">
 
                             <base-input label ="Numéro de carte d'identité" class="input-group-alternative"
                                         placeholder="insérer le numéro" v-model="user. carteNational">
@@ -115,7 +115,7 @@
             },
       demoVisibility() {
   
-
+   document.getElementById("frm").reset();
    document.getElementById("alert").style.visibility = "visible";
 
 },

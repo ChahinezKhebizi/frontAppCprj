@@ -19,7 +19,7 @@
                               </div>
                           </div>
                            <div class="card-body px-lg-5 py-lg-5">
-                               <form>
+                               <form id="frm">
                      <strong>Joindre le rapport : </strong>
                   <input  type="file"  @change="uploadFile" >
                 </form>
@@ -70,6 +70,7 @@
                 this.file = this.$refs.file.files[0];
             },
             async handleSubmit() {
+              document.getElementById("frm").reset();
                  document.getElementById("alert").style.visibility = "visible";
 
                 const formData = new FormData();

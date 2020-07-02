@@ -1,6 +1,9 @@
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
+         <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                     style=" background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+            <!-- Mask -->
+            <span class="mask bg-gradient-success opacity-7"></span>
             <!-- Card stats -->
             <div class="row">
 
@@ -13,7 +16,7 @@
 
                                 <div class="card-body px-lg-5 py-lg-4">
 
-                                    <form role="form">
+                                    <form id="frm" role="form">
 
                                         <base-input ref="NC" label ="Numéro de carte d'identité" class="input-group-alternative"
                                                     placeholder="insérer le numéro"
@@ -104,13 +107,13 @@
                                                 <base-input alternative=""
                                                             label="Numéro de la pièce d'identité"
                                                             id="CIN"
-                                                            placeholder="insérer le numéro ici"
+                                                           
                                                             input-classes="form-control-alternative"
                                                             v-model="user.carteNational"
 
 
 
-                                                >
+                                                disabled>
                                                 </base-input>
                                             </div>
                                             <div class="col-lg-6">
@@ -123,6 +126,8 @@
 
                                                 >
                                                 </base-input>
+
+                                               
                                             </div>
 
 
@@ -137,7 +142,7 @@
                                                 <base-input alternative=""
                                                             label="Date de naissance"
                                                             id="dateNaiss"
-                                                            placeholder=""
+                                                          
                                                             input-classes="form-control-alternative"
                                                             disabled
                                                             v-model="user.dateNaissance"
@@ -151,7 +156,7 @@
                                                 <base-input alternative=""
                                                             label="Lieux de naissance"
                                                             id="lieuNaiss"
-                                                            placeholder="Lieux"
+                                                            
                                                             input-classes="form-control-alternative"
                                                             disabled
                                                             v-model="user.lieuNaissance"
@@ -192,7 +197,7 @@
                                                 <base-input alternative=""
                                                             label="Adresse exacte"
                                                             id="adr"
-                                                            placeholder="adresse"
+                                                          
                                                             input-classes="form-control-alternative"
                                                             disabled
                                                             v-model="user.adresse"
@@ -239,21 +244,25 @@
                                                 <base-button   id="button1" slot="title" type="info" class="dropdown-toggle" block>
                                                     Choisir le nouvel état
                                                 </base-button>
-                                                <a class="dropdown-item" href="#" @click="changerEtatToconfirme">Positif (confirmé)</a>
-                                                <a class="dropdown-item" href="#" @click="changerEtatToNegtive">Négatif</a>
-                                                <a class="dropdown-item" href="#" @click="changerEtatToGuéri">Guéri</a>
-                                                <a class="dropdown-item" href="#"  @click="changerEtatToDecede">Décédé</a>
+                                                <a class="dropdown-item"  @click="changerEtatToconfirme">Positif (confirmé)</a>
+                                                <a class="dropdown-item"  @click="changerEtatToNegtive">Négatif</a>
+                                                <a class="dropdown-item"  @click="changerEtatToGuéri">Guéri</a>
+                                                <a class="dropdown-item"   @click="changerEtatToDecede">Décédé</a>
 
                                             </base-dropdown>
                                         </div>
                                         <div class="col-lg-6">
-                                            <base-button  id="button2" outline  type="info" size="lg" >Enregistrer le nouvel état</base-button>
+                                            <base-button  id="button2" outline  type="info" size="lg" @click="demoVisibility2" >Enregistrer le nouvel état</base-button>
                                         </div> </div> </div> </div> </card> </div>
 
                 </div>
             </div>
+            <base-alert style=" visibility:hidden" id="alert" type="success">
+              <strong>Le nouvel Etat est enregistré avec succés!</strong> 
+             </base-alert>
         </div>
-
+   
+                           
 
 
 
@@ -296,8 +305,14 @@
                 document.getElementById("change").style.visibility = "visible";
 
             },
-            chercher_numcarte(){
+            demoVisibility2() {
 
+
+                document.getElementById("alert").style.visibility = "visible";
+
+            },
+            chercher_numcarte(){
+                 document.getElementById("frm").reset();
 
                 const option = {
                     headers: {
